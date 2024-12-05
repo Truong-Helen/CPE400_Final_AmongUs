@@ -22,8 +22,8 @@ import argparse
 # amongus filter: https://github.com/cybershard/wireshark-amongus
     # modifications to lua file:
     # - changed bit32 to bit to resolve error
-    # - had to make sure 2nd and 3rd parameters in string.sub on line 250 were int
-# get only reliable GameData packets from Among Us
+    # - had to make sure 2nd and 3rd parameters in string.sub on line 251 were int
+# get only reliable packets from Among Us
 stream_filter = "amongus and amongus.packet_format eq Reliable"
 
 # ayncio fix for RunTimeError: https://github.com/KimiNewt/pyshark/issues/674
@@ -47,7 +47,6 @@ imposters = []
 suspects = []
 crewmates = []
 dead = []
-gamecode = ""
 
 def print_notes():
     print("Confirmed Identities:")
